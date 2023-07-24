@@ -1,13 +1,13 @@
-import logo from './logo.svg';
-import Form from './Form';
-import Container from './Container';
+import Container from "./Container";
+import Form from "./Form";
 
 function App() {
   return (
-    <Container>
-        <Form />
-    </Container>
+  <Container>
+    <Form />
+  </Container>
+  
   );
-}
+};
 
 export default App;

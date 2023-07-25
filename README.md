@@ -1,4 +1,4 @@
-# Currency Exchange
+# Currency Exchange React
 
 ## Description
 

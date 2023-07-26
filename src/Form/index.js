@@ -5,7 +5,7 @@ import Result from "./Result";
 
 
 const Form = () => {
-    const [result, setResult] = useState();
+    const [result, setResult] = useState(null);
     const [currency, setCurrency] = useState(exchangeTable[0].short);
     const [amount, setAmount] = useState("");
 

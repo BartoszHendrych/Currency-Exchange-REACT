@@ -8,6 +8,7 @@ html {
 
 body {
     background-image: url("background.jpg");
-    background-size: cover;
     background-position: center;
+    background-size: cover;
+    min-height: 100vh;
 }

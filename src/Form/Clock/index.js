@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"; 
+import { useCurrentDate } from "./useCurrentDate";
 import { Wrapper } from "./styled" 
 
 const formattedDate = (date) => 
@@ -12,18 +12,7 @@ const formattedDate = (date) =>
     );
 
 const Clock = () => {
-    const [date, setDate] = useState(new Date()); 
-
-    useEffect (() => {
-        const intervalId = setInterval(() => {
-            setDate(new Date());
-        }, 1000);
-
-        return  () => {
-            clearInterval(intervalId);
-        };
-    }, []);
-        
+    const date = useCurrentDate(null);
     return (
         <Wrapper>
             Dzisiaj jest {" "}

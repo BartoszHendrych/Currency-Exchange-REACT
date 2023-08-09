@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import exchangeTable from "./exchangeTable";
 import Result from "./Result";
 import Clock from "./Clock";
 import { 
@@ -10,17 +9,22 @@ import {
         SelectedCurrency, 
         EnterValue, 
         Button,
-        Sum
+        Sum,
+        Loading,
+        Failure
     } from "./styled"
+import { useRatesData } from "./useRatesData";
+
 
 
 const Form = () => {
     const [result, setResult] = useState(null);
-    const [currency, setCurrency] = useState(exchangeTable[0].short);
+    const [currency, setCurrency] = useState("");
     const [amount, setAmount] = useState("");
+    const ratesData = useRatesData();
 
     const calculateResult = (currency, amount) => {
-        const rate = exchangeTable.find(({ short }) => short === currency).rate;
+        const rate = ratesData.rates[currency];
 
         setResult({
             sourceAmount: +amount,
@@ -40,37 +44,53 @@ const Form = () => {
             <Clock />
             <Fieldset>
                 <Legend>Kalkulator Walut</Legend>
-                <p>
-                    <label>
-                        <Tag>Kwota w zł</Tag>
-                        <EnterValue type="number" min="1" step="any"
-                            autoFocus placeholder="Wpisz Wartość w PL"
-                            value={amount}
-                            onChange={({ target }) => setAmount(target.value)}
-                        />
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <Tag>Wybierz Walute</Tag>
-                        <SelectedCurrency name="ChooseCurrency"
-                            value={currency}
-                            onChange={({ target }) => setCurrency(target.value)}
-                        >
-                            {exchangeTable.map((currency => (
-                                <option
-                                    key={currency.key}
-                                    value={currency.short}
-                                >
-                                    {currency.name}
-                                </option>
-                            )))
-                            }
+                {ratesData.status === "loading" ? (
+                    <Loading>
+                        Sekunda... Ładuję kursy walut z Europejskiego Banku Centralnego.
+                    </Loading>
+                )
+                    :
+                    (ratesData.status === "error" ? (
+                        <Failure>
+                            Coś poszło nie tak... Sprawdź połącznienie z internetem.
+                        </Failure>
+                    ) : (
+                        <>
+                            <p>
+                                <label>
+                                    <Tag>Kwota w zł</Tag>
+                                    <EnterValue type="number" min="1" step="any"
+                                        autoFocus placeholder="Wpisz Wartość w PL"
+                                        value={amount}
+                                        onChange={({ target }) => setAmount(target.value)}
+                                    />
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <Tag>Wybierz Walute</Tag>
+                                    <SelectedCurrency name="ChooseCurrency"
+                                        value={currency}
+                                        onChange={({ target }) => setCurrency(target.value)}
+                                    >
+                                        {Object.keys(ratesData.rates).map((currency => (
+                                            <option
+                                                key={currency}
+                                                value={currency}
+                                            >
+                                                {currency}
+                                            </option>
+                                        )))
+                                        }
 
-                        </SelectedCurrency>
-                    </label>
-                </p>
-                <Button>Przelicz</Button>
+                                    </SelectedCurrency>
+                                </label>
+                            </p>
+                            <Button>Przelicz</Button>
+                        </>
+                    ))
+                }
+
             </Fieldset>
             <Sum>
                 <Result result={result} />

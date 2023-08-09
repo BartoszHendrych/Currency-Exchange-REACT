@@ -6,6 +6,7 @@ https://bartoszhendrych.github.io/Currency-Exchange-React/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Here's of a simple currency converter in React that fetches data from the European Central Bank (ECB). Users can input a value and select the desired currency, and the calculator will automatically fetch the current exchange rate from the ECB
 
 
 

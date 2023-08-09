@@ -62,3 +62,11 @@ export const Sum = styled.div`
     color: #000000;
     font-size: x-large;
 `;
+
+export const Loading = styled.p`
+    color: 	#000000;
+`;
+
+export const Failure = styled.p`
+    color: #ff0000;
+`;

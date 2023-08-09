@@ -12,7 +12,7 @@ import {
         Sum,
         Loading,
         Failure
-    } from "./styled"
+    } from "./styled";
 import { useRatesData } from "./useRatesData";
 
 

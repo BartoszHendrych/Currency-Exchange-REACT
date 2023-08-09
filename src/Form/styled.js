@@ -65,8 +65,10 @@ export const Sum = styled.div`
 
 export const Loading = styled.p`
     color: 	#000000;
+    text-align: center;
 `;
 
 export const Failure = styled.p`
     color: #ff0000;
+    text-align: center;
 `;

@@ -8,11 +8,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 
+
+
 ##  Simple presentation
 
 ![gif](public/Animation.gif)
 
+### Technology I used to create exchange currency:
+- HTML
+- CSS
+- JavaScript
+- React
 
+![imagehtmlcssJS](public/obrazhtml.png)
+![react_logo](public/react.png)
+ 
 ## Available Scripts
 
 In the project directory, you can run:

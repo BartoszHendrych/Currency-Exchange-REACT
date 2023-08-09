@@ -5,6 +5,7 @@ https://bartoszhendrych.github.io/Currency-Exchange-React/
 ## Description
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Currencies are downloaded from the European Central Bank
 
 
 

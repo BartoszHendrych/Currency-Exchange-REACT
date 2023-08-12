@@ -2,10 +2,11 @@
 const Result = ({ result }) => {
     return (
         <p>
-            {result && (
+           Wynik:{" "}
+            { result && (
                 <>
-                    {result.sourceAmount.toFixed(2)} PLN =&nbsp;
                     <strong>
+                        {result.sourceAmount.toFixed(2)} PLN =&nbsp;
                         {result.targetAmount.toFixed(2)} {result.currency}
                     </strong>
                 </>

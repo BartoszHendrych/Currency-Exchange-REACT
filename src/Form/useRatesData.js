@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+const url = "https://api.exchangerate.host/latest?base=PLN";
 
 export const useRatesData = () => {
     const [ratesData, setRatesData] = useState({
@@ -9,7 +10,7 @@ export const useRatesData = () => {
     useEffect(() => {
         const getRates = async () => {
             try {
-                const response = await fetch("https://api.exchangerate.host/latest?base=PLN");
+                const response = await fetch(url);
 
                 if (!response.ok) {
                     throw new Error(response.statusText);

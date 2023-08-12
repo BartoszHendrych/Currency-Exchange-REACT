@@ -11,7 +11,8 @@ import {
         Button,
         Sum,
         Loading,
-        Failure
+        Failure,
+        Info
     } from "./styled";
 import { useRatesData } from "./useRatesData";
 
@@ -92,6 +93,9 @@ const Form = () => {
                 }
 
             </Fieldset>
+            <Info>
+                Kursy walut są pobierane z Europejskiego Banku Centralnego.
+            </Info>
             <Sum>
                 <Result result={result} />
             </Sum>

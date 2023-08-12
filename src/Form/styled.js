@@ -72,3 +72,9 @@ export const Failure = styled.p`
     color: #ff0000;
     text-align: center;
 `;
+
+export const Info = styled.div`
+    margin-top: 20px;
+    text-align: center;
+    color: #979797;
+`;

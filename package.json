@@ -1,8 +1,8 @@
 {
-  "name": "Currency-Exchange-react",
+  "name": "currency-exchange-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bartoszhendrych.github.io/Currency-Exchange-react/",
+  "homepage": "https://bartoszhendrych.github.io/currency-exchange-react/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

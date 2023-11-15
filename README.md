@@ -1,6 +1,6 @@
 # Currency Exchange React
 
-https://bartoszhendrych.github.io/Currency-Exchange-REACT/
+https://bartoszhendrych.github.io/currency-exchange-react/
 
 ## Description
 

@@ -20,9 +20,6 @@ Here's of a simple currency converter in React that fetches data from the Europe
 - CSS
 - JavaScript
 - React
-
-![imagehtmlcssJS](public/obrazhtml.png)
-![react_logo](public/react.png)
  
 ## Available Scripts
 
